@@ -49,6 +49,7 @@
           (computerDecision === 'even' && userNumber % 2 === 0)) {
           balls.player -= userNumber;
           balls.bot += userNumber;
+          balls.player > 0 ? balls.player : balls.player = 0;
           alert(`'Компьютер угадал! У вас осталось: ${balls.player} шариков`);
           if (balls.player <= 0) {
             alert('Игра окончена! Вы проиграли!');
@@ -57,6 +58,7 @@
         } else {
           balls.player += userNumber;
           balls.bot -= userNumber;
+          balls.bot > 0 ? balls.bot : balls.bot = 0;
           alert(`Компьютер не угадал! У него осталось ${balls.bot} шариков`);
           if (balls.bot <= 0) {
             alert('Игра окончена! Вы выиграли!');
